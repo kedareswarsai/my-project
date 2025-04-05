@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+         
+         #output{
+            background-color: aliceblue;
+            width: 400px;
+            height: 100px;
+            text-align: right;
+            font-size: 50px;
+
+         }
+         #container{width: 450px;
+                    align-items: center;
+                    display:flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    background-color:rgb(134, 136, 136);
+                    padding-top: 20px  ;
+         }
+         button{
+            height: 70px;
+            width: 70px;
+            font-size: 30px;
+
+           
+         }
+         #buttons{
+            
+            background-color: rgb(134, 136, 136);
+            
+            width:400px;
+            gap:5px;
+        
+            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            padding-left: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+         }
+         #main{
+            
+            margin-left: 40%;
+            align-items: center;
+            display: flex;
+            cursor:grab;
+            
+         }
+         
+
+        </style>
+        <script>
+         function addnum(num) {
+            a=document.getElementById('output');
+            if (a.innerText=='calculator')
+         {a.innerText=''}
+            
+            document.getElementById('output').innerText += num;
+         }
+         function clearoutput() {
+            document.getElementById('output').innerText ="";
+         }
+         function calculate() {
+         try{
+            let result=eval(document.getElementById('output').innerText)
+            document.getElementById('output').innerText = result;
+         }
+         catch(error)
+         {
+            document.getElementById('output').innerText="error";
+
+
+         }
+      }
+
+        </script>
+    </head>
+    <body>
+        <div id="main">
+         <div id="text">
+            
+         </div>
+         
+         <div id="container">
+     <div id="output" style="text-align: center; margin-top: 10px;" >calculator</div>
+      <div id="buttons">
+      <button onclick="addnum(1)">1</button>
+      <button onclick="addnum(2)">2</button>
+      <button onclick="addnum(3)">3</button>
+      <button onclick="addnum(4)">4</button>
+      <button onclick="addnum(5)">5</button>
+      <button onclick="addnum(6)">6</button>
+      <button onclick="addnum(7)">7</button>
+      <button onclick="addnum(8)">8</button>
+      <button onclick="addnum(9)">9</button>
+      <button onclick="addnum(0)">0</button>
+      <button onclick="addnum('+')">+</button>
+      <button onclick="addnum('-')">-</button>
+      <button onclick="addnum('*')">x</button>
+      <button onclick="addnum('/')">/</button>
+      <button  onclick="clearoutput()" style="background-color: red;">C</button>
+      <button onclick="calculate()" style="background-color: greenyellow;">=</button>
+      
+      
+
+        </div>
+        </div>
+        </div>
+
+    </body>
+</html>
